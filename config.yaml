@@ -1,0 +1,30 @@
+---
+
+### EXAMPLE ###
+#- name: app1
+#  hostname: 'app1'
+#  private_ip: '192.168.10.4'
+#  box: 'ubuntu/xenial64'
+# guest: '9000'
+#  host: '9000'
+# playbook: 'app1.yml'
+#  provider: 'virtualbox'
+#  ram: '512'
+#- name: app2
+#  hostname: 'app2'
+#  private_ip: '192.168.10.6'
+#  box: 'ubuntu/xenial64'
+#  guest: '9000'
+#  host: '9000'
+  #playbook: 'app2.yml'
+#  provider: 'virtualbox'
+#  ram: '512'
+#- name: app3
+#  hostname: 'app3'
+#  private_ip: '192.168.10.5'
+#  box: 'ubuntu/xenial64'
+#  guest: '9001'
+#  host: '9001'
+#  playbook: 'app3.yml'
+#  provider: 'virtualbox'
+#  ram: '1024'
