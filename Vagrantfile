@@ -20,14 +20,19 @@ Vagrant.configure("2") do |config|
       node.vm.box = servers['box']
       node.vm.hostname = servers['hostname']
       node.vm.network :private_network, ip: servers['private_ip']
-      node.vm.network :forwarded_port, guest: servers['guest'], host: servers['host'],
-        auto_correct: true
+
+      # This loop is to be able to add multiple forwarded ports using an array in `config.yaml`
+      servers['guest'].zip(servers['host']).each do |g, h|
+        "node.vm.network :forwarded_port, guest: #{g}, host: #{h},"
+      end # end for each loop
+
       node.vm.provision "ansible" do |ansible|
         ansible.playbook = servers['playbook']
+      end # end for provision
+
       node.vm.provider servers['provider'] do |setup|
         setup.name = servers['name']
         setup.memory = servers['ram']
-      end
       end
     end
   end
