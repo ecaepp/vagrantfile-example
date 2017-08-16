@@ -6,24 +6,17 @@
 #  box: 'ubuntu/xenial64'
 #  guest: ['9000', '8000', '7000']
 #  host: ['9000', '9100', '9101']
-#  playbook: 'app1.yml'
+#  provis: ['ansible', 'shell']
+#  playbook: ['app1.yml','test.sh']
 #  provider: 'virtualbox'
-#  ram: '512'
+#  ram: '2048'
 #- name: app2
 #  hostname: 'app2'
 #  private_ip: '192.168.10.6'
 #  box: 'ubuntu/xenial64'
 #  guest: ['9001']
 #  host: ['9001']
-#  playbook: 'app2.yml'
+#  provis: ['shell', 'puppet']
+#  playbook: ['example.sh','pup.pp']
 #  provider: 'virtualbox'
 #  ram: '512'
-#- name: app3
-#  hostname: 'app3'
-#  private_ip: '192.168.10.5'
-#  box: 'ubuntu/xenial64'
-#  guest: ['9002']
-#  host: ['9002']
-#  playbook: 'app3.yml'
-#  provider: 'virtualbox'
-#  ram: '1024'
