@@ -26,14 +26,16 @@ Vagrant.configure("2") do |config|
         servers['guest'].zip(servers['host']).each do |g, h|
           "node.vm.network :forwarded_port, guest: #{g}, host: #{h},"
         end # end for each loop
+        if servers['provis'] != ''
+          servers['provis'].zip(servers['playbook']).each do |pr, pb|
+            "node.vm.provision #{pr} do |provi|
+            provi.playbook = #{pb}"
+          end # end for provision
 
-        node.vm.provision "ansible" do |ansible|
-          ansible.playbook = servers['playbook']
-        end # end for provision
-
-        node.vm.provider servers['provider'] do |setup|
-          setup.name = servers['name']
-          setup.memory = servers['ram']
+          node.vm.provider servers['provider'] do |setup|
+            setup.name = servers['name']
+            setup.memory = servers['ram']
+          end
         end
       end
     end
