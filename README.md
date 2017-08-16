@@ -38,3 +38,8 @@ need to be modified to use a different provisioner such as shell or puppet.
 
 This project is licensed under the GPL-3.0 License - see the [LICENSE.md](LICENSE) file for details
 
+```javascript
+function fancyart(arg) {
+    
+}
+```
